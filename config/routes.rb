@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/artworks/:id" => "artworks#show"
   post "/artworks" => "artworks#create"
   patch "/artworks/:id" => "artworks#update"
+  delete "/artworks/:id" => "artworks#destroy"
 
   root 'artworks#index'
 

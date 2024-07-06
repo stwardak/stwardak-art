@@ -28,4 +28,10 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def destroy
+    artwork = Artwork.find(params[:id])
+    artwork.destroy
+    head :no_content
+  end
+
 end
