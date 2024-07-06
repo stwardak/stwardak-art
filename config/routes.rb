@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   patch "/artworks/:id" => "artworks#update"
   delete "/artworks/:id" => "artworks#destroy"
 
+  # Collections routes
+  get "/collections" => "collections#index"
+  get "/collections/:id" => "collections#show"
+
   root 'artworks#index'
 
 end
