@@ -10,4 +10,22 @@ class ArtworksController < ApplicationController
     render json: artwork
   end
 
+  def create
+    artwork = Artwork.new(artwork_params)
+    if artwork.save
+      render json: artwork, status: :created
+    else
+      render json: artwork.errors, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    artwork = Artwork.find(params[:id])
+    if artwork.update(artwork_params)
+      render json: artwork
+    else
+      render json: artwork.errors, status: :unprocessable_entity
+    end
+  end
+
 end

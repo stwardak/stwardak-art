@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # Artworks routes
   get "/artworks" => "artworks#index"
   get "/artworks/:id" => "artworks#show"
+  post "/artworks" => "artworks#create"
+  patch "/artworks/:id" => "artworks#update"
 
   root 'artworks#index'
 
