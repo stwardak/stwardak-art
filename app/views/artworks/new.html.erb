@@ -1,0 +1,42 @@
+<h1>Upload New Artwork</h1>
+
+<%= form_with model: @artwork, local: true do |form| %>
+  <div>
+    <%= form.label :title %>
+      <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :medium %>
+      <%= form.text_field :medium %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+      <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :featured %>
+      <%= form.check_box :featured %>
+  </div>
+
+  <div>
+    <%= form.label :image %>
+      <%= form.file_field :image %>
+  </div>
+
+  <div>
+    <%= form.label :collections %>
+      <% Collection.all.each do |collection| %>
+        <div>
+          <%= check_box_tag "artwork[collection_ids][]" , collection.id, @artwork.collections.include?(collection) %>
+            <%= label_tag "artwork_collection_ids_#{collection.id}" , collection.name %>
+        </div>
+        <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+  <% end %>
