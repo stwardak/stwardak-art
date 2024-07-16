@@ -6,6 +6,7 @@ class CollectionsController < ApplicationController
 
   def show
     collection = Collection.find(params[:id])
-    render json: collection
+    # render json: collection
+    render json: collection.as_json(include: { artworks: { methods: :image_url } })
   end
 end
