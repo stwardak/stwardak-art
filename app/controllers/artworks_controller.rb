@@ -1,6 +1,8 @@
 class ArtworksController < ApplicationController
   def index
-    artworks = Artwork.all
+    # artworks = Artwork.all
+    featured_collection = Collection.find_by(name: "Featured Works")
+    artworks = featured_collection.artworks
     render json: artworks.map { |artwork| artwork.as_json.merge(image_url: artwork.image_url) }
   end
 
