@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
     resources :artworks, only: [:index, :show, :new, :create, :update, :destroy]
     resources :collections, only: [:index, :show]
+    
+    post 'contact', to: 'contacts#create'
   
     root 'artworks#index'
   end
