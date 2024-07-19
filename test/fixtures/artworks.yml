@@ -4,10 +4,9 @@ one:
   title: MyString
   medium: MyString
   description: MyText
-  image_url: MyString
 
 two:
   title: MyString
   medium: MyString
   description: MyText
-  image_url: MyString
+
