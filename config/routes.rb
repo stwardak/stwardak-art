@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     post 'contact', to: 'contacts#create'
 
     resources :users, only: [:index, :show, :new, :create, :update, :destroy]
+
+      post "/sessions" => "sessions#create"
   
     root 'artworks#index'
   end
